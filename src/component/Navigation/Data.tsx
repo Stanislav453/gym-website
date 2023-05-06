@@ -28,7 +28,7 @@ export const nav_title = [
 //NAVIGATION_ICONS
 export const nav_icon = [
   {
-    icon:  <FaInstagram /> ,
+    icon: <FaInstagram />,
     link: "https://www.instagram.com/adelazavrsanova/",
   },
   {
