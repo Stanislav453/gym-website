@@ -1,8 +1,69 @@
 @import "../../variables";
 
 .navigation {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: auto;
+  padding: 0.5em 2em;
   background-color: $other-background-color;
+}
+
+.navigation-logo-box {
+  flex: 1;
+}
+
+.navigation-logo-box-img {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.navigation-ul,
+.navigation-ul-icon {
+  display: flex;
+}
+
+.navigation-ul {
+  flex: 8;
+  gap: 3em;
+  justify-content: center;
+}
+
+.navigation-a {
+  color: $block-color;
+  font-size: clamp(1em, 5vw, 1.5em);
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
+  text-shadow: 1px 1px 0 #000;
+
+  &:hover {
+    color: $font-color;
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+.navigation-ul-icon {
+  flex: 1;
+  gap: 0.5em;
+  justify-content: flex-end;
+}
+
+.navigation-ul-icon-a {
+  font-size: clamp(1em, 3vw, 1.8em);
+  color: $font-color;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: lighten($font-color, 50%);
+    transition: color 0.3s ease-in-out;
+  }
 }
