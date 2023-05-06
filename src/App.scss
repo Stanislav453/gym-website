@@ -6,14 +6,32 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: $block-color;
+  color: $font-color;
+  background-color: $other-background-color;
 }
 
 body,
 ul,
-li {
+li,
+h1,
+p {
   margin: 0;
   padding: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+li{
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: transparent;
 }
 
 h1 {
