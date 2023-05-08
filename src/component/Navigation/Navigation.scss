@@ -1,16 +1,24 @@
 @import "../../variables";
 
 .navigation {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: auto;
   padding: 0.5em 2em;
   background-color: $other-background-color;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 .navigation-logo-box {
+  display: flex;
+  gap: .3em;
   flex: 1;
 }
 
@@ -58,7 +66,7 @@
 }
 
 .navigation-ul-icon-a {
-  font-size: clamp(1em, 3vw, 1.8em);
+  font-size: 1.8em;
   color: $font-color;
   transition: color 0.3s ease-in-out;
 
@@ -66,4 +74,53 @@
     color: lighten($font-color, 50%);
     transition: color 0.3s ease-in-out;
   }
+}
+
+// max-width: 1235px
+@media (max-width: 77.1875em) {
+  .navigation {
+     padding: 0.5em 1em;
+  }
+
+  .navigation-logo-box-img {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    font-size: 3.6em;
+    color: $block-color;
+
+    &:hover {
+      color: $font-color;
+    }
+  }
+  .navigation-ul {
+    position: absolute;
+    top: -650px;
+    left: 0;
+    z-index: 100;
+    flex-direction: column;
+    gap: 0.3em;
+    width: 100%;
+    background-color: $other-background-color;
+    transition: top .5s ease-in-out;
+  }
+
+  .navigation-li {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .navigation-a {
+    width: 100%;
+    padding: .8em 0;
+    text-align: center;
+    border-bottom: 1px solid #000;
+  }
+}
+
+.navigation-ul-show {
+  top: 75px;
+   transition: top .5s ease-in-out;
 }
