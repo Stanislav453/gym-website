@@ -1,20 +1,39 @@
 import "./Navigation.scss";
+import React, { useState } from "react";
 import { nav_title, nav_icon, nav_logo } from "./Data";
+import { IoMenuSharp } from "react-icons/io5";
+import { IoIosCloseCircle } from "react-icons/io";
 
 export const Navigation = () => {
+  const [menu, setMenu] = useState(false);
+
   return (
     <nav className="navigation">
       <div className="navigation-logo-box">
+        {menu ? (
+          <IoIosCloseCircle
+            className="mobile-menu"
+            onClick={() => setMenu(!menu)}
+          />
+        ) : (
+          <IoMenuSharp className="mobile-menu" onClick={() => setMenu(!menu)} />
+        )}
         <a href="#">
           <img className="navigation-logo-box-img" src={nav_logo} alt="logo" />
         </a>
       </div>
-      <ul className="navigation-ul">
+      <ul
+        className={menu ? "navigation-ul navigation-ul-show" : "navigation-ul"}
+      >
         {nav_title.map((item, key) => {
           const { title, link } = item;
           return (
             <li key={key} className="navigation-li">
-              <a className="navigation-a" href={link}>
+              <a
+                className="navigation-a"
+                href={link}
+                onClick={() => setMenu(false)}
+              >
                 {title}
               </a>
             </li>
